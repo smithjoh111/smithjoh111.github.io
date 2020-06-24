@@ -7,7 +7,10 @@ ymaps.ready(function () {
     // Создаем объект, содержащий данные панорамы.
     // Панорама имеет неполный угол обзора по вертикали.
     var panoData = {
-            angularBBox: [0.35, 8 * Math.PI/3, -0.61, 2 * Math.PI/3],
+            angularBBox: [0.5 * Math.PI,
+                2 * Math.PI,
+                -0.5 * Math.PI,
+                0],
             position: [0, 0, 0],
             tileSize: [512, 512],
             tileLevels: [{
@@ -17,7 +20,7 @@ ymaps.ready(function () {
                 },
                 // Размер изображения для высокого уровня детализации.
                 getImageSize: function () {
-                    return [10752, 1658];
+                    return [10240, 5120];
                 }
             }, {
                 // URL тайлов для низкого уровня детализации.
@@ -26,7 +29,7 @@ ymaps.ready(function () {
                 },
                 // Размер изображения для низкого уровня детализации.
                 getImageSize: function () {
-                    return [1024, 158];
+                    return [512, 256];
                 }
             }]
         },
